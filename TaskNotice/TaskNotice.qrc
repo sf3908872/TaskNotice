@@ -1,4 +1,9 @@
 <RCC>
-    <qresource prefix="TaskNotice">
+    <qresource prefix="/TaskNotice">
+        <file>res/alarm.png</file>
+        <file>res/app.png</file>
+        <file>res/settings.png</file>
+        <file>res/broom.png</file>
+        <file>res/search.png</file>
     </qresource>
 </RCC>

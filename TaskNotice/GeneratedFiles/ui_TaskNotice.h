@@ -25,25 +25,29 @@ QT_BEGIN_NAMESPACE
 class Ui_TaskNoticeClass
 {
 public:
+    QWidget *centralWidget;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
-    QWidget *centralWidget;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *TaskNoticeClass)
     {
         if (TaskNoticeClass->objectName().isEmpty())
             TaskNoticeClass->setObjectName(QStringLiteral("TaskNoticeClass"));
-        TaskNoticeClass->resize(600, 400);
-        menuBar = new QMenuBar(TaskNoticeClass);
-        menuBar->setObjectName(QStringLiteral("menuBar"));
-        TaskNoticeClass->setMenuBar(menuBar);
-        mainToolBar = new QToolBar(TaskNoticeClass);
-        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
-        TaskNoticeClass->addToolBar(mainToolBar);
+        TaskNoticeClass->resize(1666, 1064);
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/TaskNotice/res/alarm.png"), QSize(), QIcon::Normal, QIcon::Off);
+        TaskNoticeClass->setWindowIcon(icon);
         centralWidget = new QWidget(TaskNoticeClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         TaskNoticeClass->setCentralWidget(centralWidget);
+        menuBar = new QMenuBar(TaskNoticeClass);
+        menuBar->setObjectName(QStringLiteral("menuBar"));
+        menuBar->setGeometry(QRect(0, 0, 1666, 37));
+        TaskNoticeClass->setMenuBar(menuBar);
+        mainToolBar = new QToolBar(TaskNoticeClass);
+        mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
+        TaskNoticeClass->addToolBar(Qt::TopToolBarArea, mainToolBar);
         statusBar = new QStatusBar(TaskNoticeClass);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         TaskNoticeClass->setStatusBar(statusBar);
